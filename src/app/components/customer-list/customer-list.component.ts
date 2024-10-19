@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/customer';
+import { CustomerService } from '../../service/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -8,8 +9,17 @@ import { Customer } from 'src/app/customer';
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer [] = [];
+
+  constructor(private customerService: CustomerService){}
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.listCustomers();
+  }
+
+  listCustomers(){
+    this.customerService.getCustomerList().subscribe(
+      data => this.customers = data
+    );
   }
 
 }

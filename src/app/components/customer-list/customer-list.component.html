@@ -1,1 +1,19 @@
-<p>customer-list works!</p>
+<h2>Customer List</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"># Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let cus of customers">
+    <tr>
+      <th scope="row">{{cus.id}}</th>
+      <td>{{cus.name}}</td>
+      <td>{{cus.lastname}}</td>
+      <td>{{cus.email}}</td>
+    </tr>
+  </tbody>
+</table>

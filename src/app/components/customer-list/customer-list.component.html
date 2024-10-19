@@ -1,4 +1,6 @@
-<h2>Customer List</h2>
+<div class="container">
+  <h2>Customer List</h2>
+  <a class="btn btn-primary" routerLink="/customers/add">Create Customer</a>
 <table class="table">
   <thead>
     <tr>
@@ -6,6 +8,7 @@
       <th scope="col">Name</th>
       <th scope="col">Lastname</th>
       <th scope="col">Email</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody *ngFor="let cus of customers">
@@ -14,6 +17,13 @@
       <td>{{cus.name}}</td>
       <td>{{cus.lastname}}</td>
       <td>{{cus.email}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteCustomer(cus.id)">
+          Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
+</div>
+

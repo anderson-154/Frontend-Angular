@@ -22,4 +22,10 @@ export class CustomerListComponent implements OnInit {
     );
   }
 
+  deleteCustomer(id:number){
+    this.customerService.deleteCustomer(id).subscribe(
+      ()=> this.listCustomers()
+    );
+  }
+
 }

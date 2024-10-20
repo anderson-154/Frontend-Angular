@@ -19,7 +19,6 @@ export class CustomerAddComponent implements OnInit {
     private router: Router
 
   ) {
-    // Inicializa el formulario con el FormBuilder
     this.customerForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       lastname: ['', [Validators.required, Validators.minLength(2)]],
@@ -29,7 +28,6 @@ export class CustomerAddComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  // Método para manejar la creación de clientes
   onSubmit(): void {
     if (this.customerForm.valid) {
       const { name, lastname, email } = this.customerForm.value;

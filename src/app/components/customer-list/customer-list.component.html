@@ -8,6 +8,7 @@
       <th scope="col">Name</th>
       <th scope="col">Lastname</th>
       <th scope="col">Email</th>
+      <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
@@ -17,6 +18,9 @@
       <td>{{cus.name}}</td>
       <td>{{cus.lastname}}</td>
       <td>{{cus.email}}</td>
+      <td>
+        <button class="btn btn-outline-secondary"  [routerLink]="['/customers/edit', cus.id]">Edit</button>
+      </td>
       <td>
         <button class="btn btn-danger" (click)="deleteCustomer(cus.id)">
           Delete

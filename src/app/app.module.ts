@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerAddComponent } from './components/customer-add/customer-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomerEditComponent } from './components/customer-edit/customer-edit.component';
 
 const routes : Routes = [
   {
@@ -17,13 +18,18 @@ const routes : Routes = [
     path:'customers/add',
     component: CustomerAddComponent
   },
+  {
+    path: 'customers/edit/:id',
+    component: CustomerEditComponent
+  }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerListComponent,
-    CustomerAddComponent
+    CustomerAddComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,

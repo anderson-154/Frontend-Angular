@@ -2,26 +2,47 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This is a Customer Management (CRUD) Application built using Angular, where users can manage customer data using forms and validations. It is connected to a backend developed in Spring Boot and provides functionalities for creating, reading, updating, and deleting customer information.
 
-## Code scaffolding
+## Development Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To start working on this project, clone the repository using:
 
-## Build
+`git clone https://github.com/anderson-154/Frontend-Angular.git`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`cd Frontend-Angular`
 
-## Running unit tests
+`npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Run the development server with the following command:
+`ng serve -o`
 
-## Running end-to-end tests
+Navigate to http://localhost:4200/. The application will automatically reload if you make any changes to the source files.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## To build the project for production, run:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`ng build --prod`
+The build artifacts will be stored in the dist/ directory.
+
+## Docker Setup image separately from the backend
+This project includes a Dockerfile to run the frontend in a container. To build and run the frontend alone using Docker, run:
+
+`docker build -t frontend-customers .`
+
+`docker run -p 4200:80 frontend-customers`
+
+The frontend will be accessible at http://localhost:4200/.
+
+## Docker Compose Setup
+To run both the Angular frontend and the Spring Boot backend together using Docker Compose, use the following commands:
+
+`docker-compose up --build -d`
+
+This will start the Angular frontend at http://localhost:4200/ and the Spring Boot backend at http://localhost:8080/.
+
+To stop the services, use:
+
+`docker-compose down`
